@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- FavIcon -->
+    <link rel="icon" type="image/png" href="assets/images/potter-favicon.png">
+    <title>Horcrux Collector Game</title>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Roboto+Condensed" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Win Modal -->
+    <div class="container">
+        <div class="row">
+            <div id="winModal" class="col-md-12 modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="modalCopy">Congratulations, you've destroyed all the Horcruxes!</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <img class="modalImage" src="assets/images/maxresdefault.jpg">
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 winClose">
+                            <h3>Play Again!</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Win Modal -->
+    <div class="container">
+            <div class="row">
+                <div id="loseModal" class="col-md-12 modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="modalCopy">Oh no, you've been overcome by Dementors!</h2>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                <img class="modalImage" src="assets/images/WB_F5_DementorsKissHP5-FX-00049.jpg">
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 loseClose">
+                                <h3>Try Again!</h3>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12" id="horcruxCollector">
+                <h1>Destory the Horcruxes!</h1>
+            </div>
+        </div>
+
+        <div class="row" id="instructionsBlock">
+            <!-- Empy Div to add space --> 
+            <div class="col-md-2"></div> 
+
+            <div class="col-md-8" id="instructions">
+                <p>The Horcruxes will be given a random strength at the start of the game.</p>
+                <p>There are four horcruxes below.  By clicking on a horcrux you will inflict a specific amount of damage.</p>
+                <p>You win the game by exactly matching your 'Damage Points' to the 'Horcrux Strength', you lose the game if do more damage than necessary.</p>
+                <p>The Damage Points of each horcrux are hidden from you.</p>
+                <p>Each time when the game starts, the Horcruxes' Damage Points will change.</p>
+            </div>
+            <!-- Empy Div to add space -->
+            <div class="col-md-2"></div> 
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4" id="wins-losses">
+                Wins: <span id="wins"></span>
+                Losses: <span id="losses"></span>
+            </div>
+            <div class="col-md-4"></div> 
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <!-- Empy Div to add space -->
+            <div class="col-md-2"></div> 
+            
+            <div class="col-md-4 scoreboard" id="scoreToMatch">
+                <h2>Horcrux Strength</h2>
+                <div class="container">
+                    <div class="row">
+                        <!-- Empy Div to add space -->
+                        <div class="col-md-5"></div>
+            
+                        <div class="col-md-2">
+                            <span id="scoreDisplay"></span>
+                        </div>
+            
+                        <!-- Empy Div to add space -->
+                        <div class="col-md-5"></div> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 scoreboard" id="yourScore">
+                <h2>Damage</h2>
+                <div class="container">
+                    <div class="row">
+                        <!-- Empy Div to add space -->
+                        <div class="col-md-5"></div>
+            
+                        <div class="col-md-2" id="scoreCounter">
+                            <span id="playerScore"></span>
+                        </div>
+            
+                        <!-- Empy Div to add space -->
+                        <div class="col-md-5"></div> 
+                    </div>
+                </div>
+            </div>
+            <!-- Empy Div to add space -->
+            <div class="col-md-2"></div> 
+        </div>
+
+        <div class="row horcruxDisplay">
+            <!-- Empy Div to add space -->
+            <div class="col-md-2"></div> 
+
+            <div class="col-md-2 horcrux">
+                <img class="horcruxImage" src="assets/images/Locket__1_.jpg" id="cruxLocket">
+            </div>
+
+            <div class="col-md-2 horcrux">
+                <img class="horcruxImage" src="assets/images/PM_Illust_Horcrux_Nagini_DB04.jpg" id="cruxNagini">
+            </div>
+
+            <div class="col-md-2 horcrux">
+                <img class="horcruxImage" src="assets/images/WBSTL_PM_rowena_ravenclaws_diadem_horcrux.jpg" id="cruxDiadem">
+            </div>
+
+            <div class="col-md-2 horcrux">
+                <img class="horcruxImage" src="assets/images/Horcrux_Hufflepuff_Cup.DB01.jpg" id="cruxCup">
+            </div>
+            <!-- Empy Div to add space -->
+            <div class="col-md-2"></div> 
+        </div>
+        
+    </div>
+</body>
+<!-- Game JS File -->
+<script src="assets/javascript/game.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</html>
